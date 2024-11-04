@@ -7,7 +7,168 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+.pinned {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.pinned .heading h1 {
+  font-size: 8rem;
+  line-height: 8.2rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.749);
+  text-transform: capitalize;
+  position: relative;
+}
+
+.pinned .card {
+  position: absolute;
+  width: 70vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  /* border-radius:4px; */
+}
+
+.card p {
+  width: 100%;
+  background: white;
+  text-align: left;
+  color: black;
+  padding:3px 7px;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.card .img {
+  flex: 1;
+  width: 100%;
+}
+
+.progress-bar {
+  opacity: 0;
+  height: 85vh;
+  width: 10px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar .bar {
+  width: 3px;
+  height: 100%;
+  background: rgba(175, 175, 175, 0.642);
+  border-radius: 50px;
+  min-width: 3px;
+  flex-shrink: 0;
+  .line {
+    height: 0;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
+  }
+}
+
+.progress-bar .bar-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.progress-bar .bar-items .card-bar {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-right: 10px;
+}
+
+.card-bar .bar-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100px;
+  h3 {
+    text-align: right;
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: .75rem;
+    text-align: right;
+  }
+}
+.info {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 200;
+  }
+}
+
+@media (max-width:900px) {
+  .progress-bar{
+    right: 5px;
+  } 
+
+  .pinned .heading h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+  .info p {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* lenis  */
 html.lenis,
